@@ -70,25 +70,23 @@ export default function App() {
   }
   return (
     <div className="App">
-      <h1>emoji Interpreter!</h1>
+      <h1>Emoji Interpreter!</h1>
       <input
         placeholder="Enter emoji here to see meaning..."
         onChange={emojiInputHandler}
       />
       <div className="meaning">{meaning}</div>
       <div>
-        <ul>
-          {emojiArray.map(function (emoji) {
-            return (
-              <li
-                className="emoji-design"
-                onClick={() => emojiClickHandler(emoji)}
-              >
-                {emoji}
-              </li>
-            );
-          })}
-        </ul>
+        {emojiArray.map(function (emoji) {
+          return (
+            <span
+              className="emoji-design"
+              onClick={() => emojiClickHandler(emoji)}
+            >
+              {emoji}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
