@@ -46,7 +46,7 @@ var emojiDictionary = {
   "😱": "Face Screaming in Fear",
   "😖": "Confounded Face",
   "😣": "Persevering Face",
-  "😞": "Disappointed Face"
+  "😞": "Disappointed Face",
 };
 
 var emojiArray = Object.keys(emojiDictionary);
@@ -56,12 +56,14 @@ export default function App() {
 
   function emojiInputHandler(event) {
     var userInput = event.target.value;
-    var newmeaning = emojiDictionary[userInput];
-    if (newmeaning === undefined) {
-      newmeaning = "we don't have this in our database";
-    }
+    if (userInput) {
+      var newMeaning = emojiDictionary[userInput];
+      if (newMeaning === undefined) {
+        newMeaning = "we don't have this in our database";
+      }
 
-    setMeaning(newmeaning);
+      setMeaning(newMeaning);
+    }
   }
 
   function emojiClickHandler(emoji) {
